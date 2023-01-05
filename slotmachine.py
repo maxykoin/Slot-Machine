@@ -123,14 +123,14 @@ def spin(balance):
     slots = spinslot(ROWS, COLS, csymbols)
     printslot(slots)
     winnings, winlines = winning(slots, lines, bet, symvalues)
-    print(f"You won ${winnings} on", *winlines)
+    print(f"You won ${winnings} on line", *winlines)
     return winnings - totalbet
 
 def main():
     balance = deposit()
     while True:
         print(f"Current balance is ${balance}")
-        play = input('Press enter to play (Q to quit)').upper
+        play = input('Press enter to play (Q to quit) ').upper()
         if play == "Q":
             break
         balance += spin(balance)
